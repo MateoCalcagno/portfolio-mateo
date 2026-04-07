@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import { useState } from "react";
 
+// SVGs para GitHub y LinkedIn
 const GithubLogo = () => (
   <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
@@ -17,6 +19,26 @@ const LinkedinLogo = () => (
 );
 
 export default function Contact() {
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const res = await fetch("https://formspree.io/f/xkopegqo", {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+    if (res.ok) {
+      setSent(true);
+      e.target.reset();
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-slate-950">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
@@ -30,7 +52,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Tarjeta de contacto */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="order-1 md:order-1 p-10 bg-slate-900 rounded-[2rem] border border-white/5 space-y-8"
@@ -38,7 +60,7 @@ export default function Contact() {
             <p className="text-gray-400 leading-relaxed text-lg">
               Estoy abierto a nuevas oportunidades y desafíos técnicos. ¡No dudes en escribirme!
             </p>
-            
+
             <div className="space-y-4">
               {/* Email */}
               <div className="flex items-center gap-4 text-gray-300 group cursor-default">
@@ -79,23 +101,43 @@ export default function Contact() {
           </motion.div>
 
           {/* Formulario */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="order-2 md:order-2 p-10 bg-slate-900 rounded-[2rem] border border-white/5"
           >
-            <form className="space-y-5" action="mailto:mateocalcagno5@gmail.com" method="POST" encType="text/plain">
-              <input type="text" placeholder="Tu nombre" required className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all" />
-              <input type="email" placeholder="Tu correo" required className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all" />
-              <textarea rows={4} placeholder="Tu mensaje" required className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all"></textarea>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                required
+                className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Tu correo"
+                required
+                className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all"
+              />
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Tu mensaje"
+                required
+                className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all"
+              ></textarea>
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-cyan-500 text-slate-950 py-4 rounded-2xl font-black uppercase tracking-widest transition-all"
               >
                 Enviar Mensaje
               </motion.button>
+              {sent && <p className="text-green-400 mt-2">¡Mensaje enviado con éxito!</p>}
             </form>
           </motion.div>
         </div>
