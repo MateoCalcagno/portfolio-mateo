@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // SVGs para GitHub y LinkedIn
 const GithubLogo = () => (
@@ -21,23 +21,25 @@ const LinkedinLogo = () => (
 export default function Contact() {
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+
+    const formData = new FormData(e.currentTarget);
 
     const res = await fetch("https://formspree.io/f/xkopegqo", {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  });
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
 
     if (res.ok) {
       setSent(true);
-      e.target.reset();
+      e.currentTarget.reset();
     }
   };
+    
 
   return (
     <section id="contact" className="py-24 bg-slate-950">
