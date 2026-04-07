@@ -19,26 +19,28 @@ const LinkedinLogo = () => (
 export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Cabecera */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-          <h2 className="text-4xl font-extrabold text-white uppercase tracking-tighter italic">Contáctame</h2>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-4">
+          <h2 className="text-4xl font-extrabold text-white uppercase tracking-tighter italic text-left md:text-left">
+            Contáctame
+          </h2>
           <div className="h-px flex-1 bg-white/10 hidden md:block mx-8 mb-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Tarjeta de contacto */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="p-10 bg-slate-900 rounded-[2rem] border border-white/5 space-y-8"
+            className="order-1 md:order-1 p-10 bg-slate-900 rounded-[2rem] border border-white/5 space-y-8"
           >
             <p className="text-gray-400 leading-relaxed text-lg">
               Estoy abierto a nuevas oportunidades y desafíos técnicos. ¡No dudes en escribirme!
             </p>
             
             <div className="space-y-4">
-              {/* Email (no pointer) */}
+              {/* Email */}
               <div className="flex items-center gap-4 text-gray-300 group cursor-default">
                 <div className="p-3 bg-slate-800 rounded-xl group-hover:text-cyan-400 transition-colors">
                   <Mail size={20} />
@@ -81,7 +83,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="p-10 bg-slate-900 rounded-[2rem] border border-white/5"
+            className="order-2 md:order-2 p-10 bg-slate-900 rounded-[2rem] border border-white/5"
           >
             <form className="space-y-5" action="mailto:mateocalcagno5@gmail.com" method="POST" encType="text/plain">
               <input type="text" placeholder="Tu nombre" required className="w-full px-5 py-4 rounded-2xl bg-slate-800 border border-white/5 text-white focus:border-cyan-500 outline-none transition-all" />
