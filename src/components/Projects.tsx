@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import OrderSystemImg from "../assets/sp.png";
 import VaultImg from "../assets/vault.png";
-import BeatAIImg from "../assets/beatai.jpeg";
+import BeatAIImg from "../assets/beatai.png";
 
 // Componente SVG para GitHub
 const GithubLogo = () => (
