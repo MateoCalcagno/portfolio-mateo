@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Download, Coffee, Code2, Server, Database, GitBranch, Terminal, MapPin } from "lucide-react";
+import { Download, Coffee, Globe, Server, Database, GitBranch, Terminal, MapPin } from "lucide-react";
 
 const stackIcons = [
   { name: "Java", icon: <Coffee size={15} />, color: "text-orange-500" },
   { name: "Spring Boot", icon: <Server size={15} />, color: "text-green-500" },
   { name: "React", icon: <Terminal size={15} />, color: "text-cyan-400" },
-  { name: "JavaScript", icon: <Code2 size={15} />, color: "text-yellow-400" },
+  { name: "REST APIs", icon: <Globe size={15} />, color: "text-green-400" },
   { name: "SQL", icon: <Database size={15} />, color: "text-indigo-400" },
   { name: "Git", icon: <GitBranch size={15} />, color: "text-orange-600" },
 ];
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
             <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
               <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">Perfil</p>
-              <p className="text-white font-bold text-base italic">Backend & Frontend</p>
+              <p className="text-white font-bold text-base italic">Backend & FullStack</p>
             </div>
           </div>
 
