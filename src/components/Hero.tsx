@@ -87,13 +87,14 @@ export default function Hero() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors group">
-              <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">Ubicación</p>
-              <div className="flex items-center gap-2 text-white font-bold text-base">
-                <MapPin size={16} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                Argentina
-              </div>
+            <div className="flex items-center gap-2 text-white font-bold text-base">
+              <MapPin size={16} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
+              Argentina
             </div>
+
+            <p className="text-gray-400 text-sm mt-1">
+              Disponible en Buenos Aires y Córdoba
+            </p>
             <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
               <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">Perfil</p>
               <p className="text-white font-bold text-base italic">Backend & FullStack</p>
