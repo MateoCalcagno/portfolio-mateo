@@ -95,22 +95,21 @@ export default function Hero() {
               </div>
             </div>
             <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
-              <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">
-                Disponibilidad
-              </p>
-              <p className="text-white font-bold text-base">
-                Híbrido / Presencial / Remoto
-              </p>
-              <p className="text-gray-400 text-sm mt-1">
-                Buenos Aires y Córdoba
-              </p>
-            </div>
-            <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
               <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">Perfil</p>
               <p className="text-white font-bold text-base italic">Backend & FullStack</p>
             </div>
           </div>
-
+          <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
+            <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">
+              Disponibilidad
+            </p>
+            <p className="text-white font-bold text-base">
+              Híbrido / Presencial / Remoto
+            </p>
+            <p className="text-gray-400 text-sm mt-1">
+              Buenos Aires y Córdoba
+            </p>
+          </div>
           <div className="p-6 sm:p-7 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">
             <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-2">Mi Objetivo</p>
             <p className="text-white/90 font-medium text-base leading-relaxed">
