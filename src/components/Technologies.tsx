@@ -26,7 +26,7 @@ export default function Technologies() {
         {/* Encabezado */}
         <div className="flex flex-col gap-2 mb-16">
           <p className="text-cyan-500 font-mono text-sm tracking-widest uppercase italic">Tecnologías</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">Herramientas con las que trabajo</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white">Herramientas con las que trabaje</h2>
           <div className="w-20 h-1.5 bg-cyan-500 mt-4 rounded-full"></div>
         </div>
 

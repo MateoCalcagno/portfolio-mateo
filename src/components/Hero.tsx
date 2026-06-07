@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Coffee, Globe, Server, Database, GitBranch, Terminal, MapPin } from "lucide-react";
+import { Download, Coffee, Globe, Server, Database, GitBranch, Box, MapPin, TestTube, Terminal } from "lucide-react";
 
 const stackIcons = [
   { name: "Java", icon: <Coffee size={15} />, color: "text-orange-500" },
@@ -7,6 +7,8 @@ const stackIcons = [
   { name: "React", icon: <Terminal size={15} />, color: "text-cyan-400" },
   { name: "REST APIs", icon: <Globe size={15} />, color: "text-green-400" },
   { name: "SQL", icon: <Database size={15} />, color: "text-indigo-400" },
+  { name: "Testing", icon: <TestTube size={15} />, color: "text-pink-400" },
+  { name: "Docker", icon: <Box size={15} />, color: "text-blue-400" },
   { name: "Git", icon: <GitBranch size={15} />, color: "text-orange-600" },
 ];
 
@@ -89,7 +91,7 @@ export default function Hero() {
               <p className="text-cyan-500/70 text-[10px] uppercase tracking-widest font-black mb-1">Ubicación</p>
               <div className="flex items-center gap-2 text-white font-bold text-base">
                 <MapPin size={16} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                Córdoba, AR
+                Argentina
               </div>
             </div>
             <div className="p-6 bg-slate-900/50 rounded-[2rem] border border-white/5 hover:border-cyan-500/20 transition-colors">

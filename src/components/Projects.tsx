@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 import OrderSystemImg from "../assets/sp.png";
 import VaultImg from "../assets/vault.png";
 import BeatAIImg from "../assets/beatai.png";
+import WalletImg from "../assets/wallet.png";
 
 // Componente SVG para GitHub
 const GithubLogo = () => (
@@ -24,8 +25,25 @@ const projects = [
     image: OrderSystemImg 
   },
   {
+    name: "Wallet",
+    description: "Billetera virtual fullstack con autenticación, transferencias y gestión financiera.",
+    longDesc:
+      "Actualmente en desarrollo con Java, Spring Boot, React y PostgreSQL. Permite registro e inicio de sesión con JWT, transferencias mediante CVU o alias, ingresos y retiros",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "JWT",
+      "Docker"
+    ],
+    github: "https://github.com/MateoCalcagno/wallet",
+    link: "#",
+    image: WalletImg
+  },
+  {
     name: "Vault - Virtual Wallet",
-    description: "Billetera virtual para gestionar dinero digital de manera segura y sencilla.",
+    description: "Billetera virtual para gestionar dinero digital.",
     longDesc: "Construida con Ruby, Sinatra y ActiveRecord. Permite ingresos, transferencias, retiros, reservas y consulta de actividad. Dockerizado para entorno consistente y confiable.",
     tags: ["Ruby", "Sinatra", "ActiveRecord", "SQLite3", "Docker"],
     github: "https://github.com/Elias-Raimundo/Vault-app",
@@ -52,7 +70,7 @@ export default function Projects() {
         {/* Cabecera de sección */}
         <div className="flex flex-col gap-2 mb-16">
           <p className="text-cyan-500 font-mono text-sm tracking-widest uppercase">Mis Proyectos</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">Algunos trabajos que hice</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white">Algunos proyectos que realicé</h2>
           <div className="w-24 h-1.5 bg-cyan-500 mt-4 rounded-full"></div>
         </div>
 
